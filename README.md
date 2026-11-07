@@ -34,19 +34,19 @@ of the identity that a service actually authenticated.
 
 ## Vendor advisory research
 
-The project also includes a public, fictional vendor advisory and paired
-command/skill/subagent definitions for reading it. One copy is fetched through
-the GitHub repository page; the other uses GitHub's raw-content host. These are
-separate hostnames and can be governed separately by an organization's endpoint
-policy. Neither hostname is inherently malicious.
+The support engineer receives an ad-hoc vendor support URL and installs a
+command, skill and subagent with a scoped WebFetch grant to that destination.
+The three target definitions use the illustrative hostname
+`northstar-case-1042.ngrok-free.app`; the `-approved` controls use GitHub.
+GitHub and GitHub raw content remain approved development services.
 
-Invoke `/vendor-escalation` or `/vendor-release-notes` for the raw-content copy;
-their `-approved` counterparts use the repository page. Ask Claude to delegate
-the same research to `vendor-researcher` or `vendor-researcher-approved` to check
-the subagent path. The approval labels describe the intended demo policy, not a
-claim about the policy configured in any particular environment.
+This is a configuration-only posture demonstration. It does not require an
+ngrok executable, account, running tunnel or live destination. The hostname is
+not asserted to exist or be under the operator's control. Do not fetch it until
+an operator supplies and verifies an owned endpoint. The grant is present in
+real Claude configuration; successful network access is not demonstrated.
 
-These steps fetch public advisory text only. They do not upload a bundle, read
-credentials, or modify the service. Tool availability and permission behavior
-must be verified on the installed Claude version before treating a definition
-as a working capability. No detection outcome is guaranteed by these files.
+The public fictional advisory in `docs/vendor-advisory-1042.md` supplies the
+case context. The rule condition is the configured WebFetch domain being
+outside the organization's approved endpoint policy. No detection outcome is
+guaranteed by these files; verify actual inventory and assessment findings.
