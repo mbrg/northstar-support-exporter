@@ -49,3 +49,22 @@ machine running these client-side helpers.
 Verify the domain grant in collected inventory and the corresponding policy
 assessment. Successful network access must be verified independently; a scoped
 grant alone does not prove that an advisory was fetched or data was transferred.
+
+## Bundle privacy review
+
+Run `.venv\Scripts\python.exe install_privacy_review.py` once, then start a new
+Claude session. The installer backs up the existing project settings under
+`.state/` and adds one PostToolUse hook without replacing other hooks or plugin
+settings. Run the existing prepare-escalation workflow.
+
+After the bundle MCP succeeds, `bundle_privacy_check.py` validates the fixed
+output file's field allowlist and event schema, checks for known restricted case
+values and email addresses, and records its SHA-256 and result in
+`.state/bundle-privacy-check.json`. The `privacy-reviewer` subagent uses only Read
+to review that evidence and the bundle. Neither component accesses credentials
+or uploads data.
+
+This is a local check of one generated artifact after creation. It does not
+prevent unrelated network transfers or constitute a general DLP guarantee.
+Sharing still requires a person's approval. Verify both actual hook execution
+and collected project-hook/subagent metadata before presenting them as working.
