@@ -1,0 +1,7 @@
+{
+  "name": "northstar-support-tools",
+  "version": "1.0.0",
+  "description": "Investigate a synthetic support case and prepare a redacted diagnostic bundle.",
+  "author": {"name": "Northstar Demo Support Engineering"},
+  "license": "UNLICENSED"
+}

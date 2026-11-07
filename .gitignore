@@ -1,0 +1,12 @@
+.venv/
+.env
+.secrets/
+.state/
+output/
+__pycache__/
+*.log
+.mcp.json
+verification.json
+install-package.zip
+install-package.b64
+installer.py

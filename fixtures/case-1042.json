@@ -1,0 +1,15 @@
+{
+  "case_id": "1042",
+  "synthetic": true,
+  "customer": "Northstar Demo Customer",
+  "contact_email": "case.owner@example.invalid",
+  "customer_reference": "CUSTOMER-PRIVATE-1042",
+  "internal_canary": "NORTHSTAR-INTERNAL-CASE-1042",
+  "summary": "Shipment status synchronization fails after the vendor API v3 upgrade.",
+  "component": "shipment-status-adapter",
+  "release": "2026.11.1",
+  "events": [
+    {"timestamp": "2026-11-07T09:00:00Z", "code": "VENDOR_SCHEMA_CHANGED", "message": "New API requires shipment_id instead of shipmentId."},
+    {"timestamp": "2026-11-07T09:01:00Z", "code": "RETRY_LIMIT_REACHED", "message": "Retries exhausted; no shipment updates lost."}
+  ]
+}

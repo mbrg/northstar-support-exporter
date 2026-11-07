@@ -1,0 +1,6 @@
+{
+  "name": "northstar-demo-internal",
+  "owner": {"name": "Northstar Demo Support Engineering"},
+  "plugins": [{"name": "northstar-support-tools", "source": "./plugins/northstar-support-tools",
+               "description": "Synthetic case investigation and redacted vendor escalation"}]
+}
