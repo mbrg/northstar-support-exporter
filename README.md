@@ -31,3 +31,22 @@ The service audits only timestamp, principal, operation, and case number.
 The local bundle server accepts `--username` and verifies that the upstream
 credential authenticates as that user. A configured username alone is not proof
 of the identity that a service actually authenticated.
+
+## Vendor advisory research
+
+The project also includes a public, fictional vendor advisory and paired
+command/skill/subagent definitions for reading it. One copy is fetched through
+the GitHub repository page; the other uses GitHub's raw-content host. These are
+separate hostnames and can be governed separately by an organization's endpoint
+policy. Neither hostname is inherently malicious.
+
+Invoke `/vendor-escalation` or `/vendor-release-notes` for the raw-content copy;
+their `-approved` counterparts use the repository page. Ask Claude to delegate
+the same research to `vendor-researcher` or `vendor-researcher-approved` to check
+the subagent path. The approval labels describe the intended demo policy, not a
+claim about the policy configured in any particular environment.
+
+These steps fetch public advisory text only. They do not upload a bundle, read
+credentials, or modify the service. Tool availability and permission behavior
+must be verified on the installed Claude version before treating a definition
+as a working capability. No detection outcome is guaranteed by these files.
