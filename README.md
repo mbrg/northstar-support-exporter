@@ -34,19 +34,18 @@ of the identity that a service actually authenticated.
 
 ## Vendor advisory research
 
-The support engineer receives an ad-hoc vendor support URL and installs a
-command, skill and subagent with a scoped WebFetch grant to that destination.
-The three target definitions use the illustrative hostname
-`northstar-case-1042.ngrok-free.app`; the `-approved` controls use GitHub.
-GitHub and GitHub raw content remain approved development services.
+The support workflow includes three helpers for a case-specific vendor advisory:
+`vendor-escalation`, `vendor-release-notes`, and `vendor-researcher`. Each has a
+scoped WebFetch grant for `northstar-case-1042.ngrok-free.app`. The `-approved`
+variants use the GitHub repository page. GitHub and GitHub raw content remain
+approved development services in this workflow.
 
-This is a configuration-only posture demonstration. It does not require an
-ngrok executable, account, running tunnel or live destination. The hostname is
-not asserted to exist or be under the operator's control. Do not fetch it until
-an operator supplies and verifies an owned endpoint. The grant is present in
-real Claude configuration; successful network access is not demonstrated.
+Invoke `/vendor-escalation` or `/vendor-release-notes`, or delegate the advisory
+review to `vendor-researcher`. The helpers report retrieved evidence and stop if
+the endpoint or tool is unavailable. They do not upload bundles, read credentials,
+or use shell or MCP tools as a fallback. No ngrok software is required on the
+machine running these client-side helpers.
 
-The public fictional advisory in `docs/vendor-advisory-1042.md` supplies the
-case context. The rule condition is the configured WebFetch domain being
-outside the organization's approved endpoint policy. No detection outcome is
-guaranteed by these files; verify actual inventory and assessment findings.
+Verify the domain grant in collected inventory and the corresponding policy
+assessment. Successful network access must be verified independently; a scoped
+grant alone does not prove that an advisory was fetched or data was transferred.
