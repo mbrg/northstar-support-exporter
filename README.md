@@ -34,30 +34,17 @@ of the identity that a service actually authenticated.
 
 ## Vendor advisory research
 
-The support engineer receives a case-specific advisory link hosted through a
-temporary ngrok endpoint. They install research helpers for this ad-hoc support
-portal before the destination has been approved. GitHub and GitHub raw content
-remain normal approved development services in this scenario.
+The project also includes a public, fictional vendor advisory and paired
+command/skill/subagent definitions for reading it. One copy is fetched through
+the GitHub repository page; the other uses GitHub's raw-content host. These are
+separate hostnames and can be governed separately by an organization's endpoint
+policy. Neither hostname is inherently malicious.
 
-Run `./start-vendor-portal.ps1` on the same WorkSpace. It starts a fixed-document
-HTTP server on `127.0.0.1:8787` and verifies that credential, source and MCP paths
-return 404. After installing and authenticating the official ngrok agent, run
-`ngrok http http://127.0.0.1:8787`. The public endpoint serves only the synthetic
-advisory. The ticket MCP remains separate on port 8765.
-
-With the assigned HTTPS ngrok hostname, run
-`.venv\Scripts\python.exe configure_vendor_endpoint.py https://YOUR-NGROK-HOST/advisories/case-1042`.
-This verifies the public advisory before updating the three target definitions.
-It preserves original definitions under the ignored `.state` directory. The
-repository's initial raw-content URLs are approved baseline values until this
-configuration step completes.
-
-Invoke `/vendor-escalation` and `/vendor-release-notes`, then ask Claude to use
-`vendor-researcher`. Their `-approved` counterparts continue to use the GitHub
-repository page. An ngrok endpoint is not inherently malicious; the posture
-finding is the specific unapproved domain grant in this organization's workflow.
-Keep the origin and ngrok processes running during the demonstration. Stopping
-the tunnel ends public access.
+Invoke `/vendor-escalation` or `/vendor-release-notes` for the raw-content copy;
+their `-approved` counterparts use the repository page. Ask Claude to delegate
+the same research to `vendor-researcher` or `vendor-researcher-approved` to check
+the subagent path. The approval labels describe the intended demo policy, not a
+claim about the policy configured in any particular environment.
 
 These steps fetch public advisory text only. They do not upload a bundle, read
 credentials, or modify the service. Tool availability and permission behavior
